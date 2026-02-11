@@ -6,6 +6,7 @@ public abstract class Vehicle {
     protected int loadCapacity;
 
     public Vehicle() {
+
         counter ++;
     }
 
