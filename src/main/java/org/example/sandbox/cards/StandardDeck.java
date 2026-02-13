@@ -1,6 +1,11 @@
 package org.example.sandbox.cards;
 
-public class StandardDeck implements Deck{
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class StandardDeck implements Deck {
 
     List<Card> cards;
 
@@ -8,12 +13,22 @@ public class StandardDeck implements Deck{
         this.cards = newDeck();
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("StandardDeck {");
+        sb.append(cards);
+        sb.append('}');
+        return sb.toString();
+    }
+
     private List<Card> newDeck() {
 
         List<Card> cards = new ArrayList<>();
 
         Arrays.stream(Suit.values()).forEach(suit -> {
-            Arrays.stream(FaceValue.values()).map(faceValue -> new Card(suit, faceValue)).forEach(cards::add);
+            Arrays.stream(FaceValue.values())
+                    .map(faceValue -> new Card(suit, faceValue))
+                    .forEach(cards::add);
         });
         return cards;
     }
@@ -23,37 +38,44 @@ public class StandardDeck implements Deck{
     }
 
     @Override
-    public void shuffle(){
-
+    public void shuffle() {
+        Collections.shuffle(cards);
     }
 
     @Override
-    public void cut(int index){
+    public void cut(int index) {
 
+        List<Card> top = cards.subList(0, index);
+        List<Card> bottom = cards.subList(index, cards.size());
+
+        this.cards.clear();
+
+        cards.addAll(bottom);
+        cards.addAll(top);
     }
 
     @Override
-    public Card deal(){
-        return null;
+    public Card deal() {
+        return this.cards.removeFirst();
     }
 
     @Override
-    public Card turnOver(){
-        return null;
+    public Card turnOver() {
+        return this.cards.getFirst();
     }
 
     @Override
     public int search(Card card) {
-        return 0;
+        return this.cards.indexOf(card);
     }
 
     @Override
     public void newOrder() {
-
+        Collections.sort(this.cards);
     }
 
     @Override
     public int size() {
-        return 0;
+        return this.cards.size();
     }
 }

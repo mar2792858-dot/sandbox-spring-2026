@@ -10,7 +10,7 @@ public interface Deck {
     void newOrder();
     int size();
 
-    default int newSize(){
+    default int newSize() {
         throw new UnsupportedOperationException();
     }
 }

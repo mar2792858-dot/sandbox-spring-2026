@@ -1,6 +1,6 @@
 package org.example.sandbox.inheritance;
 
-public class Car extends Vehicle {
+public class Car extends Vehicle{
 
     public Car() {
         counter++;
