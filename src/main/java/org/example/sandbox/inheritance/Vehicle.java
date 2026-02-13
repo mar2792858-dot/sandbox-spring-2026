@@ -14,6 +14,18 @@ public abstract class Vehicle {
         return counter;
     }
 
-    public static int
+    public int getLoadCapacity() {
+        return loadCapacity;
+    }
+
+    public void setLoadCapacity(int loadCapacity) {
+        this.loadCapacity = loadCapacity;
+    }
+
+    public abstract void load();
+
+    public void unload() {
+        System.out.println("Unloading vehicle stuff.");
+    }
 }
 
