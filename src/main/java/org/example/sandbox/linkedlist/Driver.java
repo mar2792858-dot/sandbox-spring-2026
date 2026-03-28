@@ -1,5 +1,7 @@
 package org.example.sandbox.linkedlist;
 
+import java.util.Arrays;
+
 public class Driver {
 
     public static void main(String[] args) {
@@ -17,6 +19,26 @@ public class Driver {
         linkedList.addLast("Eight");
         linkedList.addLast("Nine");
         linkedList.addLast("Ten");
+
+        System.out.println(linkedList);
+
+        System.out.println("First: " + linkedList.peekFirst());
+        System.out.println("Last: " + linkedList.peekLast());
+
+        System.out.println("Poll First: " + linkedList.pollFirst());
+        System.out.println("Poll Last: " + linkedList.pollLast());
+
+        System.out.println(linkedList);
+
+        System.out.println(linkedList.contains("Four"));
+        System.out.println(linkedList.contains("Nine"));
+        System.out.println(linkedList.contains("Ten"));
+
+        System.out.println(linkedList.size());
+
+        linkedList.clear();
+
+        System.out.println(linkedList.size());
 
         System.out.println(linkedList);
 
