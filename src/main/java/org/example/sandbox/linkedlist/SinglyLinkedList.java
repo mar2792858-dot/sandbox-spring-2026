@@ -6,14 +6,43 @@ public class SinglyLinkedList<E> implements LinkedList<E>{
 
     private Node head;
     private Node tail;
+    private int size;
+
+    public SinglyLinkedList() {
+        head = null;
+        tail = null;
+        size = 0;
+    }
 
     @Override
     public void addFirst(E element) {
 
+        Node newNode = new Node(element, head); // 1, 2
+
+        //3
+        if (head == null) { //empty list
+            head = newNode;
+            tail = newNode;
+        } else {
+            head = newNode;
+        }
+        this.size++;
     }
 
     @Override
     public void addLast(E element) {
+
+        Node newNode = new Node(element, null); // 1
+
+        //3
+        if (head == null) { //empty list
+            tail = newNode;
+            head = newNode;
+        } else {
+            tail.next = newNode; // 2
+            tail = newNode; // 3
+        }
+        this.size++;
 
     }
 
@@ -75,7 +104,12 @@ public class SinglyLinkedList<E> implements LinkedList<E>{
 
     private class Node {
 
-        E element:
+        E element;
         Node next;
+
+        public Node(E element, Node next) {
+                this.element = element;
+                this.next = next;
+        }
     }
 }
