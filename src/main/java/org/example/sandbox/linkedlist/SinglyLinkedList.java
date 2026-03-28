@@ -69,7 +69,7 @@ public class SinglyLinkedList<E> implements LinkedList<E>{
         }
 
         builder.append(joiner);
-        builder.append("]";
+        builder.append("]");
         return builder.toString();
     }
 
