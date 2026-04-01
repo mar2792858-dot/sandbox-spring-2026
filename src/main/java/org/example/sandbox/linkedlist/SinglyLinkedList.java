@@ -154,7 +154,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
         return this.size;
     }
 
-    //
+    //O(n^2)
     @Override
     public String toString() {
 
@@ -166,7 +166,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
 
             // Walking the list loop - pattern will be used in other methods
             while (current != null) {
-                joiner.add(current.element.toString()); //
+                joiner.add(current.element.toString());
                 current = current.next;
             }
         }
