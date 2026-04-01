@@ -14,6 +14,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
         size = 0;
     }
 
+    // O(1)
     @Override
     public void addFirst(E element) {
 
@@ -28,7 +29,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
         }
         this.size++;
     }
-
+    // O(1)
     @Override
     public void addLast(E element) {
 
@@ -46,6 +47,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
 
     }
 
+    //O(1)
     @Override
     public E pollFirst() { // remove operation
 
@@ -70,6 +72,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
         return element;
     }
 
+    // O(n)
     @Override
     public E pollLast() { // remove operation
 
@@ -87,7 +90,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
                 Node current = head;
                 Node previous = head;
 
-                while (current != tail) { // detecting if we are on the tail
+                while (current != tail) { // detecting if we are on the tail - O(n) complexity
                     previous = current; // 2
                     current = current.next; //2
                 }
@@ -100,16 +103,19 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
         return element;
     }
 
+    // O(1)
     @Override
     public E peekFirst() {
         return this.head.element;
     }
 
+    //O(1)
     @Override
     public E peekLast() {
         return this.tail.element;
     }
 
+    //O(n)
     @Override
     public void clear() {
 
@@ -124,6 +130,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
         this.size = 0;
     }
 
+    // O(n)
     @Override
     public boolean contains(E element) {
 
@@ -141,11 +148,13 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
         return contains;
     }
 
+    // O(1)
     @Override
     public int size() {
         return this.size;
     }
 
+    //
     @Override
     public String toString() {
 
@@ -157,7 +166,7 @@ public class SinglyLinkedList<E> implements LinkedList<E> {
 
             // Walking the list loop - pattern will be used in other methods
             while (current != null) {
-                joiner.add(current.element.toString());
+                joiner.add(current.element.toString()); //
                 current = current.next;
             }
         }
