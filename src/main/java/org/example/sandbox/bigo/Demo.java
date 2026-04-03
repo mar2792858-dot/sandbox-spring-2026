@@ -1,8 +1,8 @@
-package org.example.sandbox.bigo;
+//package org.example.sandbox.bigo;
 
-public class Demo {
+//public class Demo {
 
-    psmv public static void main(String[] args) {
+ //    public static void main(String[] args) {
 
         // O(1) - Constant Time Complexity
         // +
@@ -16,5 +16,5 @@ public class Demo {
         // O(n)
             // O(n)
         // O(n) * O(n) = O(n^2)
-    }
-}
+  //  }
+//}
