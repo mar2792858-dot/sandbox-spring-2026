@@ -43,4 +43,46 @@ public class SearchUtility {
 
         return found;
     }
+
+    public static int binarySearchIterative(int[] array, int targetValue) {
+
+        int min = 0;
+        int max = array.length - 1;
+
+        while (min <= max) {
+
+            int mid = min + (max - min) / 2; // finding the mid
+
+            if (array[mid] == targetValue) {
+                return mid; // returning index
+            } else if (array[mid] < targetValue) {
+                min = mid + 1;
+            } else if (array[mid] > targetValue) {
+                max = mid - 1;
+            }
+        }
+
+        return -1;
+    }
+
+    public static int binarySearchRecursive(int[] array, final int targetValue) {
+        return binarySearchRecursive(array, 0, (array.length - 1), targetValue);
+    }
+
+    private static int binarySearchRecursive(int[] array, int minIndex, int maxIndex, int targetValue) {
+
+        if (maxIndex >= minIndex) {
+
+            int mid = minIndex + (maxIndex - minIndex) / 2;
+
+            if (array[mid] == targetValue) {
+                return mid;
+            } else if(array[mid] < targetValue) {
+                return binarySearchRecursive(array, mid +1, maxIndex, targetValue);
+            } else if (array[mid] > targetValue) {
+                return binarySearchRecursive(array, minIndex, mid - 1, targetValue);
+            }
+        }
+        return -1;
+    }
 }
