@@ -1,7 +1,6 @@
-package com.example.binarysearchtree;
+package org.example.sandbox.trees.binarysearchtrees;
 
-import com.example.Tree;
-import com.example.binarytree.BinaryTree;
+import org.example.sandbox.trees.Tree;
 
 import java.util.Iterator;
 

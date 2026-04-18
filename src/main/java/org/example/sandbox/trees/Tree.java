@@ -1,4 +1,4 @@
-package com.example;
+package org.example.sandbox.trees;
 
 import java.util.Iterator;
 
@@ -6,7 +6,7 @@ public interface Tree<T> extends Iterable<T> {
 
     boolean create();
     T insert(T element);
-    T search(T targetElement) throws ElementNotFoundException;
+    T search(T targetElement) throws org.example.sandbox.trees.ElementNotFoundException;
     boolean delete(T element);
     boolean contains(T targetElement);
     boolean isEmpty();

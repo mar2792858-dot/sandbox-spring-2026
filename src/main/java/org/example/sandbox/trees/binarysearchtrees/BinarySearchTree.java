@@ -1,7 +1,7 @@
-package com.example.binarysearchtree;
+package org.example.sandbox.trees.binarysearchtrees;
 
-import com.example.ElementNotFoundException;
-import com.example.Tree;
+import org.example.sandbox.trees.ElementNotFoundException;
+import org.example.sandbox.trees.Tree;
 
 import java.util.*;
 

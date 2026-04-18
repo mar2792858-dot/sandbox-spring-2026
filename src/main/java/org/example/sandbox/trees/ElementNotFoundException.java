@@ -1,4 +1,4 @@
-package com.example;
+package org.example.sandbox.trees;
 
 public class ElementNotFoundException extends Exception {
 
